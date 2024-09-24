@@ -50,9 +50,9 @@ func player_movement(delta):
 
 func _on_stamina_timeout():
 		if sprinting == true:
-			stamina -= 10
+			stamina -= 1
 		else:
-			stamina += 10
+			stamina += 1
 		if stamina == 0:
 			$Stamina.stop()
 			await get_tree().create_timer(3.0).timeout

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy3ayids37gnc"]
+[gd_scene load_steps=7 format=3 uid="uid://dy3ayids37gnc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_b6rln"]
 [ext_resource type="Texture2D" uid="uid://d0472dokffred" path="res://icon.svg" id="1_y1p0x"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="3_7m5kd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfahp"]
 atlas = ExtResource("1_y1p0x")
@@ -32,6 +33,18 @@ position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_setx8")
 
 [node name="Stamina" type="Timer" parent="."]
+wait_time = 0.1
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = -0.333334
+offset_top = -0.333333
+offset_right = 130.667
+offset_bottom = 26.6667
+script = ExtResource("3_7m5kd")
 
 [connection signal="timeout" from="Stamina" to="." method="_on_stamina_timeout"]
