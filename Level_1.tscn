@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci2ua5u0ohu3"]
+[gd_scene load_steps=2 format=3 uid="uid://ci2ua5u0ohu3"]
 
 [ext_resource type="PackedScene" uid="uid://dy3ayids37gnc" path="res://player.tscn" id="1_dt2eu"]
-[ext_resource type="PackedScene" uid="uid://bbwtikhlqq73w" path="res://egg_enemy.tscn" id="2_bltox"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_dt2eu")]
 position = Vector2(172, 85)
-
-[node name="EggEnemy" parent="." instance=ExtResource("2_bltox")]
-position = Vector2(356, 131)

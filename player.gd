@@ -4,8 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var input = Vector2.ZERO
-var friction = 600
-var accel = 1500
+var friction = 1000
+var accel = 2000
 var max_speed = 400
 
 
@@ -15,6 +15,10 @@ func _physics_process(delta):
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	input.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	if (Input.is_action_pressed("Sprint")):
+		max_speed = 800
+	else:
+		max_speed = 400
 	return input.normalized()
 
 func player_movement(delta):
