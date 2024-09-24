@@ -30,3 +30,8 @@ sprite_frames = SubResource("SpriteFrames_nfk5q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_setx8")
+
+[node name="Stamina" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Stamina" to="." method="_on_stamina_timeout"]

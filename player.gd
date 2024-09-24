@@ -7,17 +7,26 @@ var input = Vector2.ZERO
 var friction = 1000
 var accel = 2000
 var max_speed = 400
-
+var stamina = 100
+var sprinting = false
+var oneTimeSprint = true
 
 func _physics_process(delta):
+	print(stamina)
+	if stamina <0:
+		stamina = 0
+	elif stamina > 100:
+		stamina = 100
 	player_movement(delta)
 
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	input.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
-	if (Input.is_action_pressed("Sprint")):
+	if (Input.is_action_pressed("Sprint") && stamina > 0):
+		sprinting = true
 		max_speed = 800
-	else:
+	elif (Input.is_action_just_released("Sprint") || stamina == 0):
+		sprinting = false
 		max_speed = 400
 	return input.normalized()
 
@@ -36,3 +45,15 @@ func player_movement(delta):
 		velocity = velocity.limit_length(max_speed)
 		
 	move_and_slide()
+
+
+
+func _on_stamina_timeout():
+		if sprinting == true:
+			stamina -= 10
+		else:
+			stamina += 10
+		if stamina == 0:
+			$Stamina.stop()
+			await get_tree().create_timer(3.0).timeout
+			$Stamina.start()
