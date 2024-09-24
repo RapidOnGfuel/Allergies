@@ -12,8 +12,12 @@ var sprinting = false
 var oneTimeSprint = true
 
 func _physics_process(delta):
-	print(stamina)
-	if stamina <0:
+	print(max_speed)
+	
+	if stamina >0 && sprinting == false:
+		max_speed = 400
+		
+	if stamina < 0:
 		stamina = 0
 	elif stamina > 100:
 		stamina = 100
@@ -23,11 +27,17 @@ func get_input():
 	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	input.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	if (Input.is_action_pressed("Sprint") && stamina > 0):
-		sprinting = true
-		max_speed = 800
+			if stamina <= 0:
+				max_speed = 240
+			else:
+				sprinting = true
+				max_speed = 800
 	elif (Input.is_action_just_released("Sprint") || stamina == 0):
-		sprinting = false
-		max_speed = 400
+			sprinting = false
+			if stamina <= 0 && max_speed != 100:	
+				max_speed = 240
+			else:
+				max_speed = 400
 	return input.normalized()
 
 func player_movement(delta):
@@ -50,10 +60,11 @@ func player_movement(delta):
 
 func _on_stamina_timeout():
 		if sprinting == true:
-			stamina -= 1
+			stamina -= 10
 		else:
-			stamina += 1
-		if stamina == 0:
+			stamina += 10
+		if stamina <= 0:
+			print("wahhhhhh")
 			$Stamina.stop()
 			await get_tree().create_timer(3.0).timeout
 			$Stamina.start()
