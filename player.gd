@@ -42,6 +42,11 @@ func get_input():
 
 func player_movement(delta):
 	input = get_input()
+	if input.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
+
 	
 	
 	if input == Vector2.ZERO:
