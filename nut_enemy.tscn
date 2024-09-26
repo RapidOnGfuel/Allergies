@@ -278,7 +278,7 @@ animations = [{
 radius = 109.041
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxydo"]
-radius = 15.8114
+radius = 38.2099
 
 [node name="NutEnemy" type="CharacterBody2D"]
 script = ExtResource("1_rx8xd")
@@ -286,7 +286,7 @@ script = ExtResource("1_rx8xd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4mp0j")
 animation = &"attack"
-frame_progress = 0.174972
+frame_progress = 0.975574
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2
@@ -295,8 +295,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 shape = SubResource("CircleShape2D_5q2ic")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="nut_attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nut_attack"]
 shape = SubResource("CircleShape2D_mxydo")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="nut_attack" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="nut_attack" to="." method="_on_nut_attack_body_exited"]

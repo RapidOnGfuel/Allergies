@@ -40,10 +40,5 @@ func _on_detection_area_body_exited(body):
 		chasing_after_idle = false  
 
 
-func _on_nut_attack_body_entered(body):
-	if body.is_in_group("player"):
-		player = body
-
-
-func _on_nut_attack_body_exited(body: Node2D) -> void:
+func _on_nut_enemy_entered(body: Node2D) -> void:
 	pass # Replace with function body.
