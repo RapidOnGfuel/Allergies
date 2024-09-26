@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci2ua5u0ohu3"]
 
 [ext_resource type="PackedScene" uid="uid://dy3ayids37gnc" path="res://player.tscn" id="1_dt2eu"]
-[ext_resource type="PackedScene" uid="uid://g7jg1iaxeyjv" path="res://nut_enemy.tscn" id="2_2t5mh"]
+[ext_resource type="PackedScene" uid="uid://b0b8j4fxe430r" path="res://nut_enemy.tscn" id="2_4w4ru"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_dt2eu")]
 position = Vector2(172, 85)
-collision_layer = 1
 
-[node name="NutEnemy" parent="." instance=ExtResource("2_2t5mh")]
-position = Vector2(346, 133)
+[node name="NutEnemy" parent="." instance=ExtResource("2_4w4ru")]
+position = Vector2(703, 172)
+scale = Vector2(4.4, 4)

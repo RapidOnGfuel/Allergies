@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://g7jg1iaxeyjv"]
+[gd_scene load_steps=43 format=3 uid="uid://b0b8j4fxe430r"]
 
 [ext_resource type="Texture2D" uid="uid://c8rfutkdshxr" path="res://Egg_Walk.png" id="1_oip0j"]
 [ext_resource type="Script" path="res://nut_enemy.gd" id="1_rx8xd"]

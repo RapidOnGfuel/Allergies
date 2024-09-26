@@ -11,9 +11,6 @@ var stamina = 100
 var sprinting = false
 var oneTimeSprint = true
 
-func _ready():
-	Global.setPlayerReference(self)	
-
 func _physics_process(delta):
 	print(max_speed)
 	
