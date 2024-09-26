@@ -15,9 +15,17 @@ func _ready():
 func _process(delta):
 	pass
 
-func addItem():
-	inventory_updated.emit()
-	
+func addItem(item):
+	for i in range(inventory.size()):
+		if inventory[i] != null and inventory[i]["name"] == item["name"]:
+			inventory[i]["quantity"] += item["quantity"]
+			inventory_updated.emit()
+			return true
+		elif inventory[i] == null:
+			inventory[i] = item	
+			inventory_updated.emit()
+			return true
+		return false
 func removeItem():
 	inventory_updated.emit()
 
