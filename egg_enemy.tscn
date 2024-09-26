@@ -90,7 +90,7 @@ script = ExtResource("1_tkntq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_i2c5d")
-frame_progress = 0.802921
+frame_progress = 0.66849
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
