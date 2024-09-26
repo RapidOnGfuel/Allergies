@@ -26,13 +26,24 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("idle")
 
 func _on_detection_area_body_entered(body):
-	player = body
-	player_chase = false  
-	idle_timer = 3  
-	chasing_after_idle = true  
-	print(int(idle_timer))  
+	if body.is_in_group("player"):
+		player = body
+		player_chase = false  
+		idle_timer = 1  
+		chasing_after_idle = true  
+		print(int(idle_timer))  
 
 func _on_detection_area_body_exited(body):
-	player = null
-	player_chase = false
-	chasing_after_idle = false  
+	if body.is_in_group("player"):
+		player = null
+		player_chase = false
+		chasing_after_idle = false  
+
+
+func _on_nut_attack_body_entered(body):
+	if body.is_in_group("player"):
+		player = body
+
+
+func _on_nut_attack_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

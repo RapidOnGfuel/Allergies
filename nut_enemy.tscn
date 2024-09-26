@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://b0b8j4fxe430r"]
+[gd_scene load_steps=43 format=3 uid="uid://3687x72stpx1"]
 
 [ext_resource type="Texture2D" uid="uid://c8rfutkdshxr" path="res://Egg_Walk.png" id="1_oip0j"]
 [ext_resource type="Script" path="res://nut_enemy.gd" id="1_rx8xd"]
@@ -286,6 +286,7 @@ script = ExtResource("1_rx8xd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4mp0j")
 animation = &"attack"
+frame_progress = 0.174972
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbwtikhlqq73w"]
+[gd_scene load_steps=15 format=3 uid="uid://du2ts1fsl24cb"]
 
 [ext_resource type="Script" path="res://egg_enemy.gd" id="1_tkntq"]
 [ext_resource type="Texture2D" uid="uid://c8rfutkdshxr" path="res://Egg_Walk.png" id="2_frndc"]
