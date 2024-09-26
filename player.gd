@@ -11,11 +11,13 @@ var stamina = 100
 var sprinting = false
 var oneTimeSprint = true
 
+@onready var interactUI = $CanvasLayer/ColorRect
+
 func _ready():
 	Global.setPlayerReference(self)	
 
 func _physics_process(delta):
-	print(max_speed)
+
 	
 	if stamina >0 && sprinting == false:
 		max_speed = 400

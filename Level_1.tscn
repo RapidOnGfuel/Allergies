@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci2ua5u0ohu3"]
+[gd_scene load_steps=5 format=3 uid="uid://ci2ua5u0ohu3"]
 
 [ext_resource type="PackedScene" uid="uid://dy3ayids37gnc" path="res://player.tscn" id="1_dt2eu"]
 [ext_resource type="PackedScene" uid="uid://g7jg1iaxeyjv" path="res://nut_enemy.tscn" id="2_2t5mh"]
+[ext_resource type="PackedScene" uid="uid://c2tkllxoaiwyk" path="res://inventory_item.tscn" id="3_alunx"]
+[ext_resource type="Texture2D" uid="uid://d0472dokffred" path="res://icon.svg" id="4_h4h0k"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,3 +13,7 @@ collision_layer = 1
 
 [node name="NutEnemy" parent="." instance=ExtResource("2_2t5mh")]
 position = Vector2(346, 133)
+
+[node name="Inventory_Item" parent="." instance=ExtResource("3_alunx")]
+position = Vector2(655, 106)
+item_texture = ExtResource("4_h4h0k")
