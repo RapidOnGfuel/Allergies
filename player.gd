@@ -12,13 +12,14 @@ var sprinting = false
 var oneTimeSprint = true
 
 @onready var interactUI = $CanvasLayer/ColorRect
+@onready var inventoryUI =  $InventoryUI
 
 func _ready():
 	Global.setPlayerReference(self)	
 
 func _physics_process(delta):
-
-	
+	if Input.is_action_just_released("openInventory"):
+		inventoryUI.visible = !inventoryUI.visible
 	if stamina >0 && sprinting == false:
 		max_speed = 400
 		
