@@ -3,6 +3,8 @@ extends Node
 var inventory = []
 # Called when the node enters the scene tree for the first time.
 
+@onready var inventorySlotScene = preload("res://inventory_slot.tscn")
+
 signal inventory_updated
 
 var player_node: Node = null
