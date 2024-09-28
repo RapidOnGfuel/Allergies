@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl78o7dic4fkk"]
+
+[ext_resource type="Texture2D" uid="uid://d18w3mndf5kjk" path="res://placeholderweapon.png" id="1_nr4g3"]
+[ext_resource type="Script" path="res://fakegun.gd" id="1_okal3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qivsj"]
+radius = 33.0151
+
+[node name="fakegun" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_okal3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(35.96, 31.4)
+shape = SubResource("CircleShape2D_qivsj")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Placeholderweapon" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(16, 3)
+scale = Vector2(2, 1.6)
+texture = ExtResource("1_nr4g3")
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Placeholderweapon"]
+position = Vector2(2.5, -3.125)
