@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var health = 100
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -18,6 +18,8 @@ func _ready():
 	Global.setPlayerReference(self)	
 
 func _physics_process(delta):
+	
+	$CanvasLayer/ProgressBar2.value = health
 	if Input.is_action_just_released("openInventory"):
 		inventoryUI.visible = !inventoryUI.visible
 	if stamina >0 && sprinting == false:
