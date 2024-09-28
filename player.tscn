@@ -79,6 +79,12 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 19
 text = "Press E to PIck Up"
 
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 291.667
+offset_top = 0.666666
+offset_right = 457.667
+offset_bottom = 27.6667
+
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 visible = false
 
