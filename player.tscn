@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy3ayids37gnc"]
+[gd_scene load_steps=7 format=3 uid="uid://dy3ayids37gnc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_b6rln"]
 [ext_resource type="Texture2D" uid="uid://do0p217hq8x4f" path="res://Player(NeedsTail).png" id="2_gbgwu"]
 [ext_resource type="Script" path="res://progress_bar.gd" id="3_7m5kd"]
-[ext_resource type="PackedScene" uid="uid://byt5yoacpgy8o" path="res://inventory_ui.tscn" id="4_0cq0v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qt6n1"]
 atlas = ExtResource("2_gbgwu")
@@ -87,14 +86,8 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
-offset_top = 40.0
-offset_right = -78.0
-offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.192157, 0.376471, 0.321569, 1)
-
-[node name="Inventory_UI" parent="InventoryUI" instance=ExtResource("4_0cq0v")]
 
 [connection signal="timeout" from="Stamina" to="." method="_on_stamina_timeout"]

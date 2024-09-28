@@ -12,7 +12,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("walking")
 		
 		
-		$AnimatedSprite2D.flip_h = player.position.x > position.x
+		$AnimatedSprite2D.flip_h = player.position.x < position.x
 	else:
 		if chasing_after_idle:
 			idle_timer -= delta
@@ -26,19 +26,13 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("idle")
 
 func _on_detection_area_body_entered(body):
-	if body.is_in_group("player"):
-		player = body
-		player_chase = false  
-		idle_timer = 1  
-		chasing_after_idle = true  
-		print(int(idle_timer))  
+	player = body
+	player_chase = false  
+	idle_timer = 3  
+	chasing_after_idle = true  
+	print(int(idle_timer))  
 
 func _on_detection_area_body_exited(body):
-	if body.is_in_group("player"):
-		player = null
-		player_chase = false
-		chasing_after_idle = false  
-
-
-func _on_nut_enemy_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	player = null
+	player_chase = false
+	chasing_after_idle = false  
