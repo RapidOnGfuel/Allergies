@@ -81,3 +81,7 @@ func _on_stamina_timeout():
 			$Stamina.stop()
 			await get_tree().create_timer(3.0).timeout
 			$Stamina.start()
+
+
+func take_damage(damage):
+	health -= damage

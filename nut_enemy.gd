@@ -34,7 +34,7 @@ func _physics_process(delta):
 func _on_detection_area_body_entered(body):
 	player = body
 	player_chase = false  
-	idle_timer = 3  
+	idle_timer = 1
 	chasing_after_idle = true  
 	print(int(idle_timer))  
 
