@@ -11,7 +11,7 @@ var max_speed = 400
 var stamina = 100
 var sprinting = false
 var oneTimeSprint = true
-
+var invis = false
 @onready var interactUI = $CanvasLayer/ColorRect
 @onready var inventoryUI = $InventoryUI
 
@@ -77,10 +77,14 @@ func player_movement(delta):
 	move_and_slide()
 
 func take_damage(amount):
-	health -= amount
-	print("Player took %d damage, health now: %d" % [amount, health])
-	if health <= 0:
-		die()
+	if invis == false:
+		health -= amount
+		print("Player took %d damage, health now: %d" % [amount, health])
+		if health <= 0:
+			die()
+		invis = true
+		await get_tree().create_timer(2.0).timeout
+		invis = false
 
 func die():
 	print("Player has died")
