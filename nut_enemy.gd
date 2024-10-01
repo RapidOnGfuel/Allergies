@@ -37,6 +37,7 @@ func _on_detection_area_body_entered(body):
 	idle_timer = 3
 	chasing_after_idle = true
 	print(int(idle_timer))
+	player_attack = false
 
 func _on_detection_area_body_exited(body):
 	player = null
@@ -46,9 +47,9 @@ func _on_detection_area_body_exited(body):
 
 func _on_hurt_player_body_entered(body):
 	if body.has_method("take_damage"):
-		body.take_damage(10)
+		body.take_damage(5)
 		player_attack = true  
-		print("Attacking, dealing 10 damage")
+		print("Attacking, dealing 5 damage")
 		player_chase = false
 
 func _on_hurt_player_body_exited(body):

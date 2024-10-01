@@ -11,7 +11,7 @@
 position = Vector2(172, 85)
 
 [node name="NutEnemy" parent="." instance=ExtResource("2_2t5mh")]
-position = Vector2(365, 199)
+position = Vector2(798, 478)
 scale = Vector2(4.21529, 4)
 
 [node name="Inventory_Item" parent="." instance=ExtResource("3_alunx")]
