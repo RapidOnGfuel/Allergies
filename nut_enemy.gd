@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 func _on_detection_area_body_entered(body):
 	player = body
-	player_chase = false
+	player_chase = true
 	idle_timer = 3
 	chasing_after_idle = true
 	print(int(idle_timer))
@@ -42,14 +42,14 @@ func _on_detection_area_body_exited(body):
 	player = null
 	player_chase = false
 	chasing_after_idle = false
-	player_attack = true
+	player_attack = false
 
 func _on_hurt_player_body_entered(body):
 	if body.has_method("take_damage"):
 		body.take_damage(10)
 		player_attack = true  
 		print("Attacking, dealing 10 damage")
-		player_chase = true
+		player_chase = false
 
 func _on_hurt_player_body_exited(body):
 	player_attack = false

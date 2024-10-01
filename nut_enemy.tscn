@@ -536,7 +536,7 @@ animations = [{
 radius = 76.1643
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxydo"]
-radius = 6.41852
+radius = 4.16637
 
 [node name="NutEnemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -559,7 +559,7 @@ shape = SubResource("CircleShape2D_5q2ic")
 scale = Vector2(11.8, 3.24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_player"]
-scale = Vector2(1, 1.48)
+scale = Vector2(1, 3.64049)
 shape = SubResource("CircleShape2D_mxydo")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
