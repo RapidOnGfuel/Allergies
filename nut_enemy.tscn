@@ -536,7 +536,7 @@ animations = [{
 radius = 76.1643
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxydo"]
-radius = 6.94999
+radius = 9.09935
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50xs8"]
 radius = 9.43398
@@ -562,7 +562,7 @@ shape = SubResource("CircleShape2D_5q2ic")
 scale = Vector2(11.8, 3.24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_player"]
-scale = Vector2(0.454237, 0.788642)
+scale = Vector2(0.111864, 0.788642)
 shape = SubResource("CircleShape2D_mxydo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

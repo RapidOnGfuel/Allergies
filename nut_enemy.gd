@@ -55,3 +55,11 @@ func _on_hurt_player_body_entered(body):
 func _on_hurt_player_body_exited(body):
 	player_attack = false
 	player_chase = true 
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
