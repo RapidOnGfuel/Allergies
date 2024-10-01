@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbwtikhlqq73w"]
+[gd_scene load_steps=17 format=3 uid="uid://bbwtikhlqq73w"]
 
 [ext_resource type="Script" path="res://egg_enemy.gd" id="1_tkntq"]
 [ext_resource type="Texture2D" uid="uid://c8rfutkdshxr" path="res://Egg_Walk.png" id="2_frndc"]
@@ -88,6 +88,9 @@ height = 62.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7046"]
 radius = 176.003
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_prsvm"]
+radius = 63.0714
+
 [node name="EggEnemy" type="CharacterBody2D"]
 script = ExtResource("1_tkntq")
 
@@ -104,5 +107,11 @@ shape = SubResource("CapsuleShape2D_xryqk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_v7046")
 
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_prsvm")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Attack_Radius_2d_body_entered"]
