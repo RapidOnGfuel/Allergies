@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy3ayids37gnc"]
+[gd_scene load_steps=7 format=3 uid="uid://c4ftyeaewfnqi"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_b6rln"]
 [ext_resource type="Texture2D" uid="uid://do0p217hq8x4f" path="res://Player(NeedsTail).png" id="2_gbgwu"]
 [ext_resource type="Script" path="res://progress_bar.gd" id="3_7m5kd"]
-[ext_resource type="PackedScene" uid="uid://dl78o7dic4fkk" path="res://fakegun.tscn" id="3_x26lf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qt6n1"]
 atlas = ExtResource("2_gbgwu")
@@ -25,15 +24,10 @@ size = Vector2(31, 37)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_b6rln")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nfk5q")
-
-[node name="fakegun" parent="." instance=ExtResource("3_x26lf")]
-position = Vector2(32, 6)
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
@@ -84,12 +78,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 19
 text = "Press E to PIck Up"
-
-[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 291.667
-offset_top = 0.666666
-offset_right = 457.667
-offset_bottom = 27.6667
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 visible = false

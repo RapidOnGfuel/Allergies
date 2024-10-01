@@ -1,42 +1,27 @@
 extends CharacterBody2D
 
-var speed = 250  
+
+const speed = 25
+var motion
 var player_chase = false
-var idle_timer = 0  
-var chasing_after_idle = false  
-var player = null
-
+@onready var player = get_node("../Player")
 func _physics_process(delta):
+	motion = Vector2.ZERO
 	if player_chase:
-		position += (player.position - position).normalized() * speed * delta
-		$AnimatedSprite2D.play("walking")
-		
-		
-		$AnimatedSprite2D.flip_h = player.position.x > position.x
-	else:
-		if chasing_after_idle:
-			idle_timer -= delta
-			print(int(idle_timer))  
+		position += (player.position - position)/speed
 
-			if idle_timer <= 0:
-				chasing_after_idle = false 
-				player_chase = true  
-				print("Chasing!")
-		else:
-			$AnimatedSprite2D.play("idle")
 
-func _on_area_2d_body_shape_exited(body):
-	if body.is_in_group("player"):
-		player = null
-		player_chase = false
-		chasing_after_idle = false 
+
+	move_and_slide()
 
 
 func _on_area_2d_body_entered(body):
 	#if body.name == "Player":
-	print("ChasingPlayer!")
+		print("hewi")
+		player_chase = true
+		
+
+
+func _on_area_2d_body_shape_exited(body):
 	if body.is_in_group("player"):
-		player = body
-		idle_timer = 1  
-		chasing_after_idle = true  
-		print(int(idle_timer))  
+		player_chase = false
