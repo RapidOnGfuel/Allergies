@@ -1,13 +1,18 @@
 extends CharacterBody2D
 
-var speed = 250  
+var speed = 250
 var player_chase = false
 var player = null
-var idle_timer = 0  
-var chasing_after_idle = false  
+var idle_timer = 0
+var chasing_after_idle = false
+var player_attack = false
 
 func _physics_process(delta):
-	if player_chase:
+	if player_attack:
+		
+		$AnimatedSprite2D.play("attack")
+	elif player_chase:
+		
 		position += (player.position - position).normalized() * speed * delta
 		$AnimatedSprite2D.play("walking")
 		
@@ -15,30 +20,38 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = player.position.x > position.x
 	else:
 		if chasing_after_idle:
+			# Idle before chasing
 			idle_timer -= delta
-			print(int(idle_timer))  
+			print(int(idle_timer))
 
 			if idle_timer <= 0:
-				chasing_after_idle = false 
-				player_chase = true  
+				chasing_after_idle = false
+				player_chase = true
 				print("Chasing!")
 		else:
 			$AnimatedSprite2D.play("idle")
 
 func _on_detection_area_body_entered(body):
-	if body.is_in_group("player"):
-		player = body
-		player_chase = false  
-		idle_timer = 1  
-		chasing_after_idle = true  
-		print(int(idle_timer))  
+	player = body
+	player_chase = true
+	idle_timer = 3
+	chasing_after_idle = true
+	print(int(idle_timer))
+	player_attack = false
 
 func _on_detection_area_body_exited(body):
-	if body.is_in_group("player"):
-		player = null
+	player = null
+	player_chase = false
+	chasing_after_idle = false
+	player_attack = false
+
+func _on_hurt_player_body_entered(body):
+	if body.has_method("take_damage"):
+		body.take_damage(5)
+		player_attack = true  
+		print("Attacking, dealing 5 damage")
 		player_chase = false
-		chasing_after_idle = false  
 
-
-func _on_nut_enemy_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_hurt_player_body_exited(body):
+	player_attack = false
+	player_chase = true 
