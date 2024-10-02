@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player.gd" id="1_b6rln"]
 [ext_resource type="Texture2D" uid="uid://do0p217hq8x4f" path="res://Player(NeedsTail).png" id="2_gbgwu"]
 [ext_resource type="Script" path="res://progress_bar.gd" id="3_7m5kd"]
-[ext_resource type="PackedScene" path="res://fakegun.tscn" id="3_x26lf"]
+[ext_resource type="PackedScene" uid="uid://dl78o7dic4fkk" path="res://fakegun.tscn" id="3_x26lf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qt6n1"]
 atlas = ExtResource("2_gbgwu")
