@@ -6,7 +6,7 @@ var target_position = Vector2.ZERO
 var homing_strength = 0.05 # Adjust this for how strong the homing is
 var is_homing = true
 var lifetime = 5 # Time before the projectile is deleted
-
+@onready var player = get_node("../Player")
 func _ready():
 
 	# Use await to delete the projectile after its lifetime
@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	if is_homing:
 		# Gradually turn towards the target (homing behavior)
-		var direction_to_target = (target_position - position).normalized() /100
+		var direction_to_target = (player.position - position).normalized() 
 		position += direction_to_target * speed * delta
 	else:
 		# Move in a straight line if not homing
