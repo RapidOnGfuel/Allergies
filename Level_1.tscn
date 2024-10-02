@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci2ua5u0ohu3"]
+[gd_scene load_steps=6 format=3 uid="uid://ci2ua5u0ohu3"]
 
 [ext_resource type="PackedScene" uid="uid://dy3ayids37gnc" path="res://player.tscn" id="1_dt2eu"]
 [ext_resource type="PackedScene" uid="uid://b0b8j4fxe430r" path="res://nut_enemy.tscn" id="2_2t5mh"]
 [ext_resource type="PackedScene" path="res://inventory_item.tscn" id="3_alunx"]
 [ext_resource type="Texture2D" uid="uid://do0p217hq8x4f" path="res://Player(NeedsTail).png" id="4_pwxay"]
 [ext_resource type="PackedScene" uid="uid://bbwtikhlqq73w" path="res://egg_enemy.tscn" id="5_7u0oe"]
-[ext_resource type="PackedScene" uid="uid://cmbvr36k168ct" path="res://Dildo.tscn" id="6_iutel"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,7 +31,3 @@ item_effect = "+10 STrength"
 
 [node name="EggEnemy" parent="." instance=ExtResource("5_7u0oe")]
 position = Vector2(186, 483)
-
-[node name="Sprite2D2" parent="." instance=ExtResource("6_iutel")]
-position = Vector2(-1203, 851)
-scale = Vector2(3, 3)

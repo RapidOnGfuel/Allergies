@@ -573,4 +573,3 @@ shape = SubResource("CircleShape2D_50xs8")
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Hurt_player" to="." method="_on_hurt_player_body_entered"]
 [connection signal="body_exited" from="Hurt_player" to="." method="_on_hurt_player_body_exited"]
-[connection signal="body_shape_exited" from="Hurt_player" to="." method="_on_hurt_player_body_shape_exited"]
