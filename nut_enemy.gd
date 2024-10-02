@@ -43,10 +43,10 @@ func fire_projectile():
 		return
 
 	# Instantiate a new projectile
-	var projectile = projectile_scene.instance()
+	var projectile = projectile_scene.instantiate()
 
 	# Set the projectile's starting position to the enemy's position
-	projectile.global_position = global_position
+	projectile.position = position
 
 	# Set the projectile's target to the player's current position
 	projectile.target_position = player.position

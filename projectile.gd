@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 # Variables for projectile speed, target, and homing behavior
 var speed = 300
@@ -8,7 +8,7 @@ var is_homing = true
 var lifetime = 5 # Time before the projectile is deleted
 
 func _ready():
-	$Sprite2D.texture = load("res://dildo.png")
+
 	# Use await to delete the projectile after its lifetime
 	await get_tree().create_timer(lifetime).timeout
 	queue_free()
@@ -16,8 +16,8 @@ func _ready():
 func _process(delta):
 	if is_homing:
 		# Gradually turn towards the target (homing behavior)
-		var direction_to_target = (target_position - global_position).normalized()
-		global_position += direction_to_target * speed * delta
+		var direction_to_target = (target_position - position).normalized() /100
+		position += direction_to_target * speed * delta
 	else:
 		# Move in a straight line if not homing
-		global_position += (target_position - global_position).normalized() * speed * delta
+		position += (target_position - global_position).normalized() * speed * delta
