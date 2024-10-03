@@ -560,7 +560,7 @@ position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_5q2ic")
 
 [node name="Hurt_player" type="Area2D" parent="."]
-scale = Vector2(65.4458, 9.04)
+scale = Vector2(21.8058, 3.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_player"]
 scale = Vector2(0.111864, 0.788642)

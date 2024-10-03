@@ -77,9 +77,9 @@ icon = SubResource("ImageTexture_o3qk4")
 [node name="Seperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_mey5f")
 theme_override_font_sizes/font_size = 30
-text = "Button 1 "
+text = "Exit Game"
 icon = SubResource("ImageTexture_o3qk4")
