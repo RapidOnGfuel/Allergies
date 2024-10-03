@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqrchb2k2ikr7"]
+[gd_scene load_steps=6 format=3 uid="uid://cqrchb2k2ikr7"]
 
+[ext_resource type="Script" path="res://main_menu.gd" id="1_rapnq"]
 [ext_resource type="Texture2D" uid="uid://blp5es083nef4" path="res://black-smooth-textured-paper_53876-96064.jpg.png" id="1_rygbq"]
 [ext_resource type="FontFile" uid="uid://ip8bxcd15cmo" path="res://CsGlobeRegularDemo-xRj3R.ttf" id="2_edtcu"]
 [ext_resource type="FontFile" uid="uid://i7tygim0f13e" path="res://CsGlobeRegularDemo-xRj3R.otf" id="3_mey5f"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rapnq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
