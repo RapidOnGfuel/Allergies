@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bccwrt7rw0jci"]
-
-[ext_resource type="Script" path="res://sprite_2d.gd" id="2_yk4hc"]
+[gd_scene format=3 uid="uid://bccwrt7rw0jci"]
 
 [node name="Sprite2D" type="Sprite2D"]
 position = Vector2(-356, 344)
-script = ExtResource("2_yk4hc")

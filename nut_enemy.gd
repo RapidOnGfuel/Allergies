@@ -2,16 +2,16 @@ extends CharacterBody2D
 
 var speed = 250
 var player_chase = false
-
 var idle_timer = 0
 var chasing_after_idle = false
 var player_attack = false
 var firing_cooldown = 2.0 # Time between firing projectiles
 var firing_timer = 0.0 # Tracks time since last projectile
+
 @onready var player = get_node("../Player")
 
 # Reference to the projectile scene
-var projectile_scene = preload("res://Projectile.tscn") # Make sure to adjust the path to the correct location
+var projectile_scene = preload("res://Projectile.tscn") # Make sure to adjust the path
 
 func _physics_process(delta):
 	if player_attack:
@@ -59,7 +59,7 @@ func fire_projectile():
 	get_parent().add_child(projectile)
 
 func _on_detection_area_body_entered(body):
-	if body.name == "Player": # Make sure it's the player
+	if body.name == "Player": # Ensure it's the player
 		player = body
 		player_chase = true
 		idle_timer = 3

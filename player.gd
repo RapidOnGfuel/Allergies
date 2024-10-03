@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var health = 100
-
+var bullet_scene = preload("res://Bullet.tscn")  # Load the bullet scene (make sure you have a Bullet scene)
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var input = Vector2.ZERO
@@ -24,7 +24,6 @@ func _physics_process(delta):
 	if Input.is_action_just_released("openInventory"):
 		inventoryUI.visible = !inventoryUI.visible
 	
-	
 	if stamina > 0 and sprinting == false:
 		max_speed = 400
 		
@@ -38,7 +37,6 @@ func _physics_process(delta):
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	input.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
-	
 	
 	if Input.is_action_pressed("Sprint") and stamina > 0:
 		if stamina <= 0:
@@ -58,13 +56,11 @@ func get_input():
 func player_movement(delta):
 	input = get_input()
 	
-	
 	if input.x < 0:
 		$AnimatedSprite2D.flip_h = true
 	else:
 		$AnimatedSprite2D.flip_h = false
 
-	
 	if input == Vector2.ZERO:
 		if velocity.length() > (friction * delta):
 			velocity -= velocity.normalized() * (friction * delta)
@@ -88,7 +84,6 @@ func take_damage(amount):
 
 func die():
 	print("Player has died")
-	
 
 func _on_stamina_timeout():
 	if sprinting:
@@ -99,4 +94,22 @@ func _on_stamina_timeout():
 		print("Stamina depleted!")
 		$Stamina.stop()
 		await get_tree().create_timer(3.0).timeout
-		$Stamina.start()	
+		$Stamina.start()
+
+# Handle mouse click to shoot a bullet
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		shoot_bullet(event.position)
+
+func shoot_bullet(target_position: Vector2):
+	# Create a new bullet instance
+	var bullet = bullet_scene.instantiate()  # Use instantiate() instead of instance()
+
+	# Set the bullet's starting position to the player's current position
+	bullet.global_position = global_position
+
+	# Pass the target position (where the player clicked) to the bullet
+	bullet.target_position = target_position
+
+	# Add the bullet to the scene
+	get_parent().add_child(bullet)
