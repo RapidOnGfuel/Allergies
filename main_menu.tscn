@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqrchb2k2ikr7"]
+[gd_scene load_steps=4 format=3 uid="uid://cqrchb2k2ikr7"]
 
 [ext_resource type="Texture2D" uid="uid://blp5es083nef4" path="res://black-smooth-textured-paper_53876-96064.jpg.png" id="1_rygbq"]
 [ext_resource type="FontFile" uid="uid://ip8bxcd15cmo" path="res://CsGlobeRegularDemo-xRj3R.ttf" id="2_edtcu"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_o3qk4"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -40,6 +42,9 @@ theme_override_constants/separation = 60
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_edtcu")
@@ -47,3 +52,21 @@ theme_override_font_sizes/font_size = 60
 text = "GAME TITLE"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Button 1 "
+icon = SubResource("ImageTexture_o3qk4")
