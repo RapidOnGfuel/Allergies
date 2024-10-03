@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqrchb2k2ikr7"]
+[gd_scene load_steps=5 format=3 uid="uid://cqrchb2k2ikr7"]
 
 [ext_resource type="Texture2D" uid="uid://blp5es083nef4" path="res://black-smooth-textured-paper_53876-96064.jpg.png" id="1_rygbq"]
 [ext_resource type="FontFile" uid="uid://ip8bxcd15cmo" path="res://CsGlobeRegularDemo-xRj3R.ttf" id="2_edtcu"]
+[ext_resource type="FontFile" uid="uid://i7tygim0f13e" path="res://CsGlobeRegularDemo-xRj3R.otf" id="3_mey5f"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_o3qk4"]
 
@@ -66,7 +67,19 @@ alignment = 1
 [node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mey5f")
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+icon = SubResource("ImageTexture_o3qk4")
+
+[node name="Seperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mey5f")
+theme_override_font_sizes/font_size = 30
 text = "Button 1 "
 icon = SubResource("ImageTexture_o3qk4")
