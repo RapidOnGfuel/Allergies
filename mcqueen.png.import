@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p33s0cxwoprf"
-path="res://.godot/imported/dildo.png-f521e6d3acbc4392d1995153c668e81c.ctex"
+path="res://.godot/imported/mcqueen.png-43469fd57935f20ba4aad452f54b9c2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dildo.png"
-dest_files=["res://.godot/imported/dildo.png-f521e6d3acbc4392d1995153c668e81c.ctex"]
+source_file="res://mcqueen.png"
+dest_files=["res://.godot/imported/mcqueen.png-43469fd57935f20ba4aad452f54b9c2c.ctex"]
 
 [params]
 
