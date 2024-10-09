@@ -10,7 +10,7 @@ signal inventory_updated
 var player_node: Node = null
 
 func _ready():
-	inventory.resize(10)
+	inventory.resize(3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

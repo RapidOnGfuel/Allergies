@@ -18,7 +18,7 @@ scale = Vector2(4.21529, 4)
 [node name="Inventory_Item" parent="." instance=ExtResource("3_alunx")]
 position = Vector2(655, 106)
 item_type = "Consumable"
-item_name = "GodotBuff"
+item_name = "Buff"
 item_texture = ExtResource("4_pwxay")
 item_effect = "+10 STrength"
 

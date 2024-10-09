@@ -18,7 +18,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-		pass
+		$Button.size.x = 100
+		$Button.size.y = 100
+		
 
 func _on_item_button_mouse_entered():
 	print("heri")
@@ -29,6 +31,7 @@ func _on_item_button_mouse_entered():
 
 func _on_item_button_mouse_exited():
 		detailsPanel.visible = false
+		UsagePanel.visible = false
 
 
 func _on_item_button_pressed():
