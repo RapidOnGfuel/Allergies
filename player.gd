@@ -113,3 +113,9 @@ func shoot_bullet(target_position: Vector2):
 
 	# Add the bullet to the scene
 	get_parent().add_child(bullet)
+
+
+
+#Does nothing for now
+func applyEffect(effect):
+	max_speed = 800

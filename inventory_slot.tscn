@@ -122,6 +122,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.00201)
 
+[connection signal="pressed" from="UsagePanel/UseButton" to="." method="_on_use_button_pressed"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_item_button_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_item_button_pressed"]

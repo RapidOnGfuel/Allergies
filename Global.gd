@@ -20,6 +20,8 @@ func _process(delta):
 func addItem(item):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["name"] == item["name"]:
+			print("heuiw")
+
 			inventory[i]["quantity"] += item["quantity"]
 			inventory_updated.emit()
 			return true
