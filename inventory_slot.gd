@@ -18,7 +18,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-		pass
+		$Button.size.x = 100
+		$Button.size.y = 100
+		
 
 func _on_item_button_mouse_entered():
 	print("heri")
@@ -37,14 +39,24 @@ func _on_item_button_pressed():
 		UsagePanel.visible = !UsagePanel.visible
 
 
+
+
 func setEmpty():
 	icon.texture =null
 	quantityLabel.text = ""
 	
 func setItem(newItem):
 	item = newItem
+
 	icon.texture = item["texture"]
 	quantityLabel.text = str(item["quantity"])
 	itemName.text =  str(item["name"])
 	itemType.text = str(item["type"])
 	itemEffect.text = str(item["effect"])
+
+
+func _on_use_button_pressed():
+	$UsagePanel.visible = false
+	if item != null:
+		if Global.player_node:
+			Global.player_node.applyEffect(item["effect"])

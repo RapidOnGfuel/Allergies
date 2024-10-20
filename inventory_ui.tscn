@@ -13,9 +13,9 @@ script = ExtResource("1_mfyju")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 159.0
-offset_right = 976.0
-offset_bottom = 526.0
-theme_override_constants/h_separation = 2000
+offset_left = 29.0
+offset_top = 22.0
+offset_right = 1130.0
+offset_bottom = 617.0
+theme_override_constants/h_separation = 110
 columns = 6
