@@ -1,12 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci2ua5u0ohu3"]
+[gd_scene load_steps=9 format=4 uid="uid://ci2ua5u0ohu3"]
 
 [ext_resource type="PackedScene" uid="uid://dy3ayids37gnc" path="res://player.tscn" id="1_dt2eu"]
+[ext_resource type="Texture2D" uid="uid://bfncr23qmcm0d" path="res://Borders.png" id="1_tfach"]
 [ext_resource type="PackedScene" uid="uid://b0b8j4fxe430r" path="res://nut_enemy.tscn" id="2_2t5mh"]
 [ext_resource type="PackedScene" uid="uid://c2tkllxoaiwyk" path="res://inventory_item.tscn" id="3_alunx"]
 [ext_resource type="Texture2D" uid="uid://do0p217hq8x4f" path="res://Player(NeedsTail).png" id="4_pwxay"]
 [ext_resource type="PackedScene" uid="uid://bbwtikhlqq73w" path="res://egg_enemy.tscn" id="5_7u0oe"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hw8y"]
+texture = ExtResource("1_tfach")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:1/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bqkin"]
+sources/0 = SubResource("TileSetAtlasSource_4hw8y")
+
 [node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAAAAAAAAAACAAkAAAAAAAAAAAACAAoAAAAAAAAAAAACAAsAAAAAAAAAAAACAAwAAAAAAAAAAAACAA0AAAAAAAAAAAACAA4AAAAAAAAAAAACAA8AAAAAAAAAAAACABAAAAAAAAAAAAACABEAAAAAAAAAAAACABIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_bqkin")
+use_kinematic_bodies = true
 
 [node name="Player" parent="." instance=ExtResource("1_dt2eu")]
 position = Vector2(172, 85)
