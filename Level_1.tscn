@@ -53,4 +53,4 @@ item_texture = ExtResource("4_pwxay")
 item_effect = "+10 STrength"
 
 [node name="EggEnemy" parent="." instance=ExtResource("5_7u0oe")]
-position = Vector2(186, 483)
+position = Vector2(176, 446)

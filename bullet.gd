@@ -30,12 +30,13 @@ func _process(delta):
 		if global_position.distance_to(target_position) < 10:
 			queue_free()  # Remove the bullet from the scene
 
-func _on_Area2D_body_entered(body):
+
+
+
+func _on_area_2d_body_entered(body):
 	# Check if the bullet hits an egg_enemy
 	if body.name == "egg_enemy":
 		# If the bullet hits the enemy, deal 2 damage
-		body.take_damage(2)  # Deal 2 damage
+		body.take_damage(10)  # Deal 2 damage
 		print("Egg enemy hit by bullet!")
-		
-	# Remove the bullet regardless of the target hit
-	queue_free()
+		queue_free()

@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://x86yaid3y1bm"]
+[gd_scene load_steps=4 format=3 uid="uid://x86yaid3y1bm"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_y3xyf"]
+[ext_resource type="Texture2D" uid="uid://85qw6j0aefx1" path="res://mcweenie.png" id="2_cc8ma"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3vo1"]
-radius = 65.0
-height = 130.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld5ce"]
+size = Vector2(688.5, 409)
 
-[node name="Node2D" type="Node2D"]
+[node name="Bullet" type="Node2D"]
 script = ExtResource("1_y3xyf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cc8ma")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CapsuleShape2D_j3vo1")
+position = Vector2(13.75, 13.5)
+shape = SubResource("RectangleShape2D_ld5ce")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
