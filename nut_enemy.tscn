@@ -709,7 +709,6 @@ script = ExtResource("1_rx8xd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4mp0j")
 animation = &"die"
-frame_progress = 0.155933
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2

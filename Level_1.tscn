@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dy3ayids37gnc" path="res://player.tscn" id="1_dt2eu"]
 [ext_resource type="Texture2D" uid="uid://bfncr23qmcm0d" path="res://Borders.png" id="1_tfach"]
-[ext_resource type="PackedScene" uid="uid://b0b8j4fxe430r" path="res://nut_enemy.tscn" id="2_2t5mh"]
 [ext_resource type="PackedScene" uid="uid://c2tkllxoaiwyk" path="res://inventory_item.tscn" id="3_alunx"]
 [ext_resource type="Texture2D" uid="uid://do0p217hq8x4f" path="res://Player(NeedsTail).png" id="4_pwxay"]
 [ext_resource type="PackedScene" uid="uid://bbwtikhlqq73w" path="res://egg_enemy.tscn" id="5_7u0oe"]
+[ext_resource type="PackedScene" uid="uid://c1wbla7i84yc" path="res://real_nut_enemy.tscn" id="6_xifhs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hw8y"]
 texture = ExtResource("1_tfach")
@@ -34,23 +34,22 @@ use_kinematic_bodies = true
 [node name="Player" parent="." instance=ExtResource("1_dt2eu")]
 position = Vector2(172, 85)
 
-[node name="NutEnemy" parent="." instance=ExtResource("2_2t5mh")]
-position = Vector2(798, 478)
-scale = Vector2(4.21529, 4)
-
 [node name="Inventory_Item" parent="." instance=ExtResource("3_alunx")]
-position = Vector2(655, 106)
+position = Vector2(1989, 80)
 item_type = "Consumable"
 item_name = "GodotBuff"
 item_texture = ExtResource("4_pwxay")
 item_effect = "+10 STrength"
 
 [node name="Inventory_Item2" parent="." instance=ExtResource("3_alunx")]
-position = Vector2(875, 106)
+position = Vector2(1657, 84)
 item_type = "Consumable"
 item_name = "GodotBuff"
 item_texture = ExtResource("4_pwxay")
 item_effect = "+10 STrength"
 
 [node name="EggEnemy" parent="." instance=ExtResource("5_7u0oe")]
-position = Vector2(176, 446)
+position = Vector2(2020, 644)
+
+[node name="RealNutEnemy" parent="." instance=ExtResource("6_xifhs")]
+position = Vector2(909, 468)

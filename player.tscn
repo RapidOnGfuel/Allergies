@@ -93,6 +93,7 @@ offset_right = 457.667
 offset_bottom = 27.6667
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="InventoryUI"]
 anchors_preset = 15
