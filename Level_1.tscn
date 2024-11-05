@@ -49,7 +49,7 @@ item_texture = ExtResource("4_pwxay")
 item_effect = "+10 STrength"
 
 [node name="EggEnemy" parent="." instance=ExtResource("5_7u0oe")]
-position = Vector2(2020, 644)
+position = Vector2(432, 453)
 
 [node name="RealNutEnemy" parent="." instance=ExtResource("6_xifhs")]
 position = Vector2(909, 468)

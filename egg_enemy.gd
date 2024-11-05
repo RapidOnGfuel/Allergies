@@ -4,10 +4,10 @@ var speed = 100
 var player_chase = false
 var idle_timer = 0  
 var chasing_after_idle = false  
-var player = null
-var player_attack = false
 var invis = false
 var health = 100  # Health of the enemy
+@onready var player = get_node("../Player")
+
 
 func _physics_process(delta):
 	if player_chase:
@@ -31,12 +31,10 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	print("ChasingPlayer!")
 	if body.is_in_group("player"):
-		player = body
 		player_chase = true
 		idle_timer = 2 
 		print(int(idle_timer))  
 		chasing_after_idle = true  
-		player_attack=false
 	
 		
 
@@ -62,13 +60,19 @@ func _on_area_2d_2_body_entered(body):
 	if body.has_method("take_damage"):
 		$AnimatedSprite2D.play("egg_Attacking")
 		player_chase=false
-		body.take_damage(10)
-		player_attack=true
+		player_attack();
 
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("player"):
-		player = null
 		player_chase = false
 		chasing_after_idle = false 
-		player_attack = false 
+		
+func player_attack():
+	var playerPositionX = player.position.x
+	var selfPositionX = self.position.x
+	var playerPositionY = player.position.y
+	var selfPositionY = self.position.y
+	var distance = sqrt(abs((playerPositionY - selfPositionY)**2 + (playerPositionX - selfPositionX)**2))
+	if (distance < 65):
+		player.take_damage(10)
