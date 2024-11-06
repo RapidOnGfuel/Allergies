@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 100  
+var speed = 200  
 var player_chase = false
 var idle_timer = 0  
 var chasing_after_idle = false  
@@ -33,7 +33,6 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		player_chase = true
 		idle_timer = 2 
-		print(int(idle_timer))  
 		chasing_after_idle = true  
 	
 		
@@ -46,7 +45,7 @@ func take_damage(amount):
 		if health <= 0:
 			die()  # Call die if health is zero or less
 		invis = true
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(0.75).timeout
 		invis = false
 
 # Function to handle enemy death
@@ -60,6 +59,7 @@ func _on_area_2d_2_body_entered(body):
 	if body.has_method("take_damage"):
 		$AnimatedSprite2D.play("egg_Attacking")
 		player_chase=false
+		await get_tree().create_timer(1.0).timeout
 		player_attack();
 
 
@@ -69,10 +69,12 @@ func _on_area_2d_body_exited(body):
 		chasing_after_idle = false 
 		
 func player_attack():
-	var playerPositionX = player.position.x
-	var selfPositionX = self.position.x
-	var playerPositionY = player.position.y
-	var selfPositionY = self.position.y
-	var distance = sqrt(abs((playerPositionY - selfPositionY)**2 + (playerPositionX - selfPositionX)**2))
-	if (distance < 65):
-		player.take_damage(10)
+	$attackHitbox/CollisionShape2D.disabled = false
+	await get_tree().create_timer(1.0).timeout
+	$attackHitbox/CollisionShape2D.disabled = true
+
+
+
+func _on_attack_hitbox_body_entered(body: Node2D) -> void:
+	print("Hit")
+	player.take_damage(10)
